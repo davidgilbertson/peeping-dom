@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import historyManager from '../../utils/historyManager';
 import { captureInteraction } from '../../peepingDomUtils/utils';
+import './ProductList.css'
 
 const ProductList = props => (
   <Fragment>
@@ -27,13 +28,13 @@ const ProductList = props => (
 
     <h1>Products</h1>
 
-    <ul>
+    <ul className="ProductList__list">
       {props.products.map(product => (
-        <li key={product.id}>
+        <li key={product.id} className="ProductList__list-item">
           {product.name} - {product.price}
 
           <button
-            data-interaction-id={`Buy product button: ${product.id}`}
+            data-interaction-id={`Product details button: ${product.id}`}
             onClick={(e) => {
               captureInteraction(e);
 

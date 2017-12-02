@@ -1,0 +1,14 @@
+.ProductList__list {
+  max-width: 1000px;
+  margin: 40px auto;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.ProductList__list-item {
+  border: 1px solid grey;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  height: 300px;
+  margin-bottom: 40px;
+  padding: 50px;
+}
