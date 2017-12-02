@@ -1,13 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import historyManager from '../../utils/historyManager';
+import { captureInteraction } from '../../peepingDomUtils/utils';
+
 
 const Link = props => (
   <a
-    href={props.href}
+    href={props.to}
+    className={props.className}
+    data-interaction-id={props.interactionId}
     onClick={(e) => {
       e.preventDefault();
-      console.log('  --  >  Link.js:13 >  > props.href:', props.href);
-      props.onClick(props.href);
+
+      captureInteraction(e);
+
+      historyManager.push(props.to);
     }}
   >
     {props.children}
@@ -15,9 +22,11 @@ const Link = props => (
 );
 
 Link.propTypes = {
-  href: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  interactionId: PropTypes.string.isRequired,
+  // onClick: PropTypes.func.isRequired,
 };
 
 export default Link;

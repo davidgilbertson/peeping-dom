@@ -1,16 +1,15 @@
-import captureAction from '../peepingDomUtils/utils/captureAction';
-
-import { CHANGE_PAGE } from './actionTypes';
+import { CHANGE_PAGE, CHANGE_SEARCH_QUERY } from './actionTypes';
 
 export const changePage = page => {
   window.history.pushState({}, '', page);
 
-  const action = {
+  return {
     type: CHANGE_PAGE,
     page,
   };
-
-  captureAction(action);
-
-  return action;
 };
+
+export const changeSearchQuery = query => ({
+  type: CHANGE_SEARCH_QUERY,
+  query,
+});

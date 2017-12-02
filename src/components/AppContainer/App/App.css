@@ -1,0 +1,23 @@
+.App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 30px;
+}
+
+.App__nav-wrapper {
+  text-align: center;
+  background: steelblue;
+  color: white;
+  padding: 20px;
+}
+
+.App__nav-link {
+  margin: 10px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
