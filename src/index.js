@@ -6,13 +6,12 @@ import reducers from './data/reducers';
 import productData from './data/productData';
 import {
   captureActionMiddleware,
+  startListeningForPlayback,
   startRecording,
 } from './peepingDomUtils/utils';
 import './index.css';
 import AppContainer from './components/AppContainer/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
-
-startRecording();
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -32,11 +31,17 @@ const store = createStore(
   ),
 );
 
+startRecording();
+
 ReactDOM.render(
   <Provider store={store}>
     <AppContainer pathName={document.location.pathname} />
   </Provider>,
   document.getElementById('root')
 );
+
+if (process.env.NODE_ENV === 'development') {
+  startListeningForPlayback(store);
+}
 
 registerServiceWorker();

@@ -1,14 +1,28 @@
+.ProductList__search-wrapper {
+  border: 2px solid red;
+  max-width: 100%;
+}
+
+.ProductList__search-input {
+  display: block;
+  padding: 10px;
+  font-size: 18px;
+  margin: 40px auto;
+  width: 400px;
+}
+
 .ProductList__list {
   max-width: 1000px;
   margin: 40px auto;
+  padding: 0 30px;
   list-style-type: none;
   font-size: 20px;
 }
 
 .ProductList__list-item {
-  border: 1px solid grey;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
   height: 300px;
   margin-bottom: 40px;
   padding: 50px;
 }
+

@@ -9,21 +9,20 @@ const ProductList = props => (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        props.changeSearchQuery(e.target.search.value);
       }}
     >
       <input
         name="search"
+        placeholder="Search"
+        className="ProductList__search-input"
         data-interaction-id="Product search input"
+        value={props.ui.query}
+        onChange={(e) => {
+          props.changeSearchQuery(e.target.value);
+        }}
         onFocus={captureInteraction}
+        autoFocus
       />
-
-      <button
-        data-interaction-id="Product search button"
-        onFocus={captureInteraction}
-      >
-        Search
-      </button>
     </form>
 
     <h1>Products</h1>
@@ -52,6 +51,7 @@ const ProductList = props => (
 );
 
 ProductList.propTypes = {
+  changeSearchQuery: PropTypes.func.isRequired,
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -59,7 +59,9 @@ ProductList.propTypes = {
       price: PropTypes.string.isRequired,
     }),
   ),
-  changeSearchQuery: PropTypes.func.isRequired,
+  ui: PropTypes.shape({
+    query: PropTypes.string,
+  }).isRequired,
 };
 
 export default ProductList;

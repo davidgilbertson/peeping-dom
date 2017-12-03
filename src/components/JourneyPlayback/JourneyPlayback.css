@@ -1,0 +1,23 @@
+.JourneyPlayback__wrapper {
+  text-align: center;
+}
+
+.JourneyPlayback__iframe {
+  border: 1px solid red;
+  margin: 0 auto;
+  display: block;
+}
+
+.JourneyPlayback__next-button {
+  display: block;
+  padding: 10px 20px;
+  margin: 20px auto;
+  border: none;
+  background: crimson;
+  color: white;
+  font-size: 20px;
+}
+
+.JourneyPlayback__url {
+  font-size: 20px;
+}

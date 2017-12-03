@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Link from '../../Link/Link';
 import ProductList from '../../ProductList/ProductList';
+import JourneyPlayback from '../../JourneyPlayback/JourneyPlayback';
 import DetailsPageContainer from '../../DetailsPageContainer/DetailsPageContainer';
 import historyManager from '../../../utils/historyManager';
 import { captureCurrentUrl } from '../../../peepingDomUtils/utils';
@@ -40,6 +41,11 @@ class App extends Component {
 
   render() {
     const { state } = this;
+
+    if (state.pathName === '/playback') {
+      // so dodgy
+      return <JourneyPlayback />;
+    }
 
     const BodyPage = ROUTES[state.pathName] || ROUTES.NOT_FOUND;
 
@@ -82,10 +88,11 @@ class App extends Component {
 }
 
 App.propTypes = {
-  changePage: PropTypes.func.isRequired,
+  // changePage: PropTypes.func.isRequired,
   changeSearchQuery: PropTypes.func.isRequired,
   pathName: PropTypes.string.isRequired,
   products: PropTypes.array.isRequired,
+  query: PropTypes.string,
   // ui: PropTypes.shape({
   //   currentPage: PropTypes.string.isRequired,
   // }),
