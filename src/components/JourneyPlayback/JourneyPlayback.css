@@ -6,6 +6,7 @@
   border: 1px solid red;
   margin: 0 auto;
   display: block;
+  box-shadow: 1px 1px 46px rgba(0, 0, 0, 0.3);
 }
 
 .JourneyPlayback__next-button {

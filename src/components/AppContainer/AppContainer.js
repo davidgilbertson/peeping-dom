@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { changePage, changeSearchQuery } from '../../data/actionCreators';
+import { changeSearchQuery } from '../../data/actionCreators';
 import App from './App/App';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => ({
 const AppContainer = connect(
   mapStateToProps,
   {
-    changePage,
     changeSearchQuery,
   }
 )(App);

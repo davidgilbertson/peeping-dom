@@ -10,10 +10,10 @@ import './App.css';
 
 const ROUTES = {
   '/product-list': ProductList,
-  '/profile': () => <div>The profile page</div>,
+  '/profile': () => <h1>The profile page</h1>,
   '/details': DetailsPageContainer,
-  '/': () => <div>The homepage</div>,
-  NOT_FOUND: () => <div>404</div>,
+  '/': () => <h1>The homepage</h1>,
+  NOT_FOUND: () => <h1>404</h1>,
 };
 
 class App extends Component {
@@ -51,10 +51,6 @@ class App extends Component {
 
     return (
       <Fragment>
-        <header className="App-header">
-          <h1 className="App-title">A mock app for Peeping DOM</h1>
-        </header>
-
         <nav className="App__nav-wrapper">
           <Link
             to="/"
@@ -88,14 +84,10 @@ class App extends Component {
 }
 
 App.propTypes = {
-  // changePage: PropTypes.func.isRequired,
   changeSearchQuery: PropTypes.func.isRequired,
   pathName: PropTypes.string.isRequired,
   products: PropTypes.array.isRequired,
   query: PropTypes.string,
-  // ui: PropTypes.shape({
-  //   currentPage: PropTypes.string.isRequired,
-  // }),
 };
 
 export default App;

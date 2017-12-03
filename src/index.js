@@ -17,7 +17,6 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const initialState = {
   ui: {
-    // currentPage: document.location.pathname,
     query: '',
   },
   products: productData,

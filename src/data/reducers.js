@@ -1,13 +1,8 @@
 import { combineReducers } from 'redux';
-import { CHANGE_PAGE, CHANGE_SEARCH_QUERY } from './actionTypes';
+import { CHANGE_SEARCH_QUERY } from './actionTypes';
 
 function ui(state = {}, action) {
   switch (action.type) {
-    case CHANGE_PAGE: // TODO (davidg): strip out page change everywhere
-      return {
-        ...state,
-        currentPage: action.page,
-      };
     case CHANGE_SEARCH_QUERY:
       return {
         ...state,
