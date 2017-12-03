@@ -4,21 +4,27 @@ import {
   captureInteraction,
   saveRecording,
 } from '../../../peepingDomUtils/utils';
+import './DetailsPage.css'
 
 const DetailsPage = props => (
-  <div>
-    <h1>Product details for "{props.product.name}"</h1>
+  <div className="DetailsPage">
+    <h1>{props.product.name}</h1>
+
     <button
       data-interaction-id={`Buy product button: ${props.product.id}`}
+      className="DetailsPage__buy-button"
       onClick={(e) => {
         captureInteraction(e);
         saveRecording();
       }}
     >
-      Buy this product
+      Buy this for {props.product.price}
     </button>
 
-    <pre>{JSON.stringify(props, null, 2)}</pre>
+    <img
+      alt={props.product.name}
+      src={props.product.img}
+    />
   </div>
 );
 

@@ -25,14 +25,24 @@ const ProductList = props => (
       />
     </form>
 
-    <h1>Products</h1>
-
     <ul className="ProductList__list">
       {props.products.map(product => (
         <li key={product.id} className="ProductList__list-item">
-          {product.name} - {product.price}
+          <img
+            className="ProductList__product-img"
+            alt={product.name}
+            src={product.img}
+          />
+          <p className="ProductList__product-name">
+            {product.name}
+          </p>
+
+          <p className="ProductList__product-price">
+            {product.price}
+          </p>
 
           <button
+            className="ProductList__product-details-button"
             data-interaction-id={`Product details button: ${product.id}`}
             onClick={(e) => {
               captureInteraction(e);

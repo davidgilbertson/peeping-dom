@@ -1,0 +1,16 @@
+.DetailsPage {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.DetailsPage__buy-button {
+  display: block;
+  padding: 20px 40px;
+  margin: 60px auto;
+  font-size: 18px;
+  background: seagreen;
+  color: white;
+  border: none;
+}

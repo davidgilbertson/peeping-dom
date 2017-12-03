@@ -21,8 +21,37 @@
 
 .ProductList__list-item {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-  height: 300px;
   margin-bottom: 40px;
-  padding: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
 }
 
+
+.ProductList__product-img {
+  width: 250px;
+  height: 250px;
+  margin-right: 50px;
+}
+
+.ProductList__product-name {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.ProductList__product-price {
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 30px;
+  color: green;
+  margin-right: 20px;
+}
+
+.ProductList__product-details-button {
+  padding: 20px 40px;
+  margin-right: 20px;
+  font-size: 18px;
+  background: steelblue;
+  color: white;
+  border: none;
+}

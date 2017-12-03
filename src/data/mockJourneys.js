@@ -1,20 +1,30 @@
 export default [
   {
     "meta": {
-      "startTime": 1512282535086,
-      "startUrl": "http://localhost:3000/product-list",
+      "startTime": 1512288180319,
+      "startUrl": "http://localhost:3000/",
       "screenWidth": 768,
       "screenHeight": 1024,
-      "endTime": 1512282546137
+      "endTime": 1512288191629
     },
     "steps": [
       {
-        "time": 1512282537320,
+        "time": 1512288182083,
+        "type": "ELEMENT_INTERACTION",
+        "data": "Top nav link: Product list"
+      },
+      {
+        "time": 1512288182083,
+        "type": "URL_CHANGE",
+        "data": "http://localhost:3000/product-list"
+      },
+      {
+        "time": 1512288182093,
         "type": "ELEMENT_INTERACTION",
         "data": "Product search input"
       },
       {
-        "time": 1512282539047,
+        "time": 1512288183299,
         "type": "REDUX_ACTION",
         "data": {
           "type": "CHANGE_SEARCH_QUERY",
@@ -22,7 +32,7 @@ export default [
         }
       },
       {
-        "time": 1512282539159,
+        "time": 1512288183431,
         "type": "REDUX_ACTION",
         "data": {
           "type": "CHANGE_SEARCH_QUERY",
@@ -30,7 +40,7 @@ export default [
         }
       },
       {
-        "time": 1512282539249,
+        "time": 1512288183511,
         "type": "REDUX_ACTION",
         "data": {
           "type": "CHANGE_SEARCH_QUERY",
@@ -38,7 +48,7 @@ export default [
         }
       },
       {
-        "time": 1512282539390,
+        "time": 1512288183631,
         "type": "REDUX_ACTION",
         "data": {
           "type": "CHANGE_SEARCH_QUERY",
@@ -46,7 +56,7 @@ export default [
         }
       },
       {
-        "time": 1512282539542,
+        "time": 1512288183719,
         "type": "REDUX_ACTION",
         "data": {
           "type": "CHANGE_SEARCH_QUERY",
@@ -55,26 +65,26 @@ export default [
       },
       {
         "type": "SCROLL",
-        "data": 1048
+        "data": 323
       },
       {
-        "time": 1512282544463,
+        "time": 1512288189744,
         "type": "ELEMENT_INTERACTION",
-        "data": "Product details button: 7"
+        "data": "Product details button: 5"
       },
       {
-        "time": 1512282544464,
+        "time": 1512288189744,
         "type": "URL_CHANGE",
-        "data": "http://localhost:3000/details?productId=7"
+        "data": "http://localhost:3000/details?productId=5"
       },
       {
         "type": "SCROLL",
         "data": 0
       },
       {
-        "time": 1512282546137,
+        "time": 1512288191629,
         "type": "ELEMENT_INTERACTION",
-        "data": "Buy product button: 7"
+        "data": "Buy product button: 5"
       }
     ]
   }

@@ -3,10 +3,10 @@
 }
 
 .JourneyPlayback__iframe {
-  border: 1px solid red;
+  border: none;
   margin: 0 auto;
   display: block;
-  box-shadow: 1px 1px 46px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 46px rgba(0, 0, 0, 0.2);
 }
 
 .JourneyPlayback__next-button {
