@@ -5,14 +5,14 @@ import ProductList from '../../ProductList/ProductList';
 import JourneyPlayback from '../../JourneyPlayback/JourneyPlayback';
 import DetailsPageContainer from '../../DetailsPageContainer/DetailsPageContainer';
 import historyManager from '../../../utils/historyManager';
-import { captureCurrentUrl } from '../../../peepingDomUtils/utils';
+import { captureCurrentUrl } from '../../../peepingDomUtils/record';
 import './App.css';
 
 const ROUTES = {
   '/product-list': ProductList,
   '/profile': () => <h1>The profile page</h1>,
   '/details': DetailsPageContainer,
-  '/': () => <h1>The homepage</h1>,
+  '/': () => <h1 style={{ textAlign: 'center' }}>The homepage</h1>,
   NOT_FOUND: () => <h1>404</h1>,
 };
 

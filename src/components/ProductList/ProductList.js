@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import historyManager from '../../utils/historyManager';
-import { captureInteraction } from '../../peepingDomUtils/utils';
+import { captureInteraction } from '../../peepingDomUtils/record';
 import './ProductList.css'
 
 const ProductList = props => (
@@ -38,7 +38,7 @@ const ProductList = props => (
           </p>
 
           <p className="ProductList__product-price">
-            {product.price}
+            ${product.price}
           </p>
 
           <button
@@ -66,7 +66,7 @@ ProductList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      price: PropTypes.string.isRequired,
+      price: PropTypes.number,
     }),
   ),
   ui: PropTypes.shape({

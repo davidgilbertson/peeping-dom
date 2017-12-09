@@ -3,22 +3,44 @@
 }
 
 .JourneyPlayback__iframe {
+  position: relative;
   border: none;
-  margin: 0 auto;
-  display: block;
-  box-shadow: 1px 1px 46px rgba(0, 0, 0, 0.2);
 }
 
 .JourneyPlayback__next-button {
   display: block;
   padding: 10px 20px;
-  margin: 20px auto;
+  margin: 40px auto;
   border: none;
   background: crimson;
   color: white;
   font-size: 20px;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.JourneyPlayback__next-button:active {
+  opacity: 0.8;
+  transform: translateY(1px);
+}
+
+.JourneyPlayback__select {
+  padding: 8px 16px;
+  font-size: 16px;
 }
 
 .JourneyPlayback__url {
   font-size: 20px;
+}
+
+.JourneyPlayback__device {
+  margin: 80px auto 0;
+  display: block;
+  position: relative;
+}
+
+.JourneyPlayback__iPad {
+  position: absolute;
+  left: 50%;
+  transform: translate(-49.9%, -56px);
 }

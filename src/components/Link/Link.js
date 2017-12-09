@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import historyManager from '../../utils/historyManager';
-import { captureInteraction } from '../../peepingDomUtils/utils';
+import { captureInteraction } from '../../peepingDomUtils/record';
 
 
 const Link = props => (
@@ -26,7 +26,6 @@ Link.propTypes = {
   className: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
   interactionId: PropTypes.string.isRequired,
-  // onClick: PropTypes.func.isRequired,
 };
 
 export default Link;

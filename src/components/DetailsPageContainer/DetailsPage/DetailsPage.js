@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  captureInteraction,
-  saveRecording,
-} from '../../../peepingDomUtils/utils';
+import { captureInteraction } from '../../../peepingDomUtils/record';
 import './DetailsPage.css'
 
 const DetailsPage = props => (
@@ -15,13 +12,19 @@ const DetailsPage = props => (
       className="DetailsPage__buy-button"
       onClick={(e) => {
         captureInteraction(e);
-        saveRecording();
+
+        // I'm using toLocaleString() without checking that product.price exists because
+        // Daryl from the database corner of the office said it's totally
+        // impossible for the price column to ever be empty.
+        // Daryl has never lead me astray in the past and I see no reason to start doubting him now
+        window.alert(`Thanks for buying ${props.product.name} for $${props.product.price.toLocaleString()}`)
       }}
     >
-      Buy this for {props.product.price}
+      Buy this for ${props.product.price}
     </button>
 
     <img
+      className="DetailsPage__image"
       alt={props.product.name}
       src={props.product.img}
     />
@@ -32,7 +35,7 @@ DetailsPage.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    price: PropTypes.number,
   }).isRequired,
 };
 

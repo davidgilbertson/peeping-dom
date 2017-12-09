@@ -1,4 +1,4 @@
-import { captureCurrentUrl } from '../peepingDomUtils/utils';
+import { captureCurrentUrl } from '../peepingDomUtils/record';
 
 const onChangeListeners = [];
 

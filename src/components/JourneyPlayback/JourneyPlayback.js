@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import mockJourneys from '../../data/mockJourneys';
-import { INTERACTION_TYPES } from '../../peepingDomUtils/utils';
+import { INTERACTION_TYPES } from '../../peepingDomUtils/record';
+import iPadLandscape from './iPadLandscape.png';
 import './JourneyPlayback.css'
 
 class JourneyPlayback extends PureComponent {
@@ -36,13 +37,25 @@ class JourneyPlayback extends PureComponent {
   }
 
   render () {
-    const { state } = this;
-    const meta = state.currentJourney.meta;
-    const src = state.currentUrl || meta.startUrl;
+    const meta = this.state.currentJourney.meta;
+    const src = this.state.currentUrl || meta.startUrl;
+
+    // TODO, obviously handle more (or less) than just one device/orientation
+    const isIpadLandscape = (
+      /iPad/.test(meta.userAgent) &&
+      meta.screenHeight === 768 &&
+      meta.screenWidth === 1024
+    );
+
+    const dateString = new Date(meta.startTime).toLocaleDateString();
 
     return (
       <div className="JourneyPlayback__wrapper">
-        <h1>Playing back a user journey</h1>
+        <h1>Play back an error</h1>
+
+        <select className="JourneyPlayback__select">
+          <option>{meta.shortError} ({dateString})</option>
+        </select>
 
         <button
           className="JourneyPlayback__next-button"
@@ -53,14 +66,23 @@ class JourneyPlayback extends PureComponent {
 
         <p className="JourneyPlayback__url">URL: {src}</p>
 
-        <iframe
-          title="Playback window"
-          className="JourneyPlayback__iframe"
-          width={`${meta.screenWidth}px`}
-          height={`${meta.screenHeight}px`}
-          src={src}
-          ref={(el) => { this.iFrame = el; }}
-        />
+        <div className="JourneyPlayback__device">
+          {isIpadLandscape && (
+            <img
+              className="JourneyPlayback__iPad"
+              src={iPadLandscape}
+              alt=""
+            />
+          )}
+          <iframe
+            title="Playback window"
+            className="JourneyPlayback__iframe"
+            width={`${meta.screenWidth}px`}
+            height={`${meta.screenHeight}px`}
+            src={src}
+            ref={(el) => { this.iFrame = el; }}
+          />
+        </div>
       </div>
     );
   }

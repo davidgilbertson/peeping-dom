@@ -6,9 +6,10 @@ import reducers from './data/reducers';
 import productData from './data/productData';
 import {
   captureActionMiddleware,
-  startListeningForPlayback,
   startRecording,
-} from './peepingDomUtils/utils';
+  sendErrorReport,
+} from './peepingDomUtils/record';
+import { startListeningForPlayback } from './peepingDomUtils/playback';
 import './index.css';
 import AppContainer from './components/AppContainer/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
@@ -31,6 +32,8 @@ const store = createStore(
 );
 
 startRecording();
+
+window.addEventListener('error', sendErrorReport);
 
 ReactDOM.render(
   <Provider store={store}>
